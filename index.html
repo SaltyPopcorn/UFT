@@ -1,44 +1,56 @@
 <head>
-	<!--included files-->
 	<link rel="stylesheet" href="styles.css">
 	<script src="jquery-3.2.1.js"></script>
 </head>
 <body>
-
 	<table class="panel">
-	<tr>
-	<th>
-		<div id="textWindow">
-			Text Goes Here.Text Goes Here.Text Goes Here.Text Goes Here.Text Goes Here.Text Goes Here.Text Goes Here.Text Goes Here.Text Goes Here.Text Goes Here.Text Goes Here.Text Goes Here.Text Goes Here.Text Goes Here.Text Goes Here.Text Goes Here.
-		</div>
-	<th>
-	<tr>
+		<tr>
+			<th style="width: 150px" align=left>
+				<table class="panel" style="width: 150px">
+					<tr>
+						<th style="border: solid; vertical-align: top" id="statWindow">
+							Stats
+						</th>
+					</tr>
+				</table>
+			</th>
+			<th>
+					<div id="textWindow">
+						Text Goes Here.Text Goes Here.Text Goes Here.Text Goes Here.Text Goes Here.Text Goes Here.Text Goes Here.Text Goes Here.Text Goes Here.Text Goes Here.Text Goes Here.Text Goes Here.Text Goes Here.Text Goes Here.Text Goes Here.Text Goes Here.
+					</div>
+			</th>
+			<th style="width: 150px" align=right>
+				<table class="panel" style="width: 150px">
+					<tr>
+						<th style="border: solid; vertical-align: top" id="inventoryWindow">
+							Inventory
+						</th>
+					</tr>
+					<tr style="border: solid">
+						<th style="height: 125; border: solid;" >
+							Map<br>
+							<canvas width=100 height=100 style="border: solid" id="mapcanvas"></canvas>
+						</th>
+					</tr>
+				</table>
+			</th>
+		</tr>
 	</table>
-	<table id="buttonTable">
-	<tr><th><button class="Choice">LOOK</button></th><th><button class="Choice">NORTH</button></th><th><button class="Choice">USE</button></th><th><button class="Choice"></button></th><th><button class="Choice"></button></th><th><button class="Choice"></button></th></tr>
-	<tr><th><button class="Choice">WEST</button></th><th><button class="Choice">SOUTH</button></th><th><button class="Choice">EAST</button></th><th><button class="Choice"></button></th><th><button class="Choice"></button></th><th><button class="Choice"></button></th></tr>
-	</table>
+	<div style="width: 100%; text-align: center;">
+		<table style="align: center; margin:1em auto;" id="buttonTable">
+		<tr><th><button id="buttonLook" class="Choice">LOOK</button></th>
+		<th><button id="buttonNorth" class="Choice Dir">NORTH</button></th>
+		<th><button id="buttonUse" class="Choice">USE</button></th>
+		<th><button id="button1" class="Choice"></button></th>
+		<th><button id="button2" class="Choice"></button></th>
+		<th><button id="button3" class="Choice"></button></th></tr>
+		<tr><th><button id="buttonWest" class="Choice Dir">WEST</button></th>
+		<th><button id="buttonSouth"class="Choice Dir">SOUTH</button></th>
+		<th><button id="buttonEast" class="Choice Dir">EAST</button></th>
+		<th><button id="button4" class="Choice"></button></th><th>
+		<button id="5" class="Choice"></button></th><th>
+		<button id="button6" class="Choice"></button></th></tr>
+		</table>
+	</div>
 	<script src="main.js"></script>
-	
-	<!--additional page styling-->
-	<script>
-	
-		var ButtonArrPos = function(){
-			var offset = document.getElementById("buttonTable").offsetWidth;
-			document.getElementById("buttonTable").style.left = (window.innerWidth/2 - offset/2) + "px";
-		}
-		
-		$(document).ready(function(){
-			ButtonArrPos();
-		});
-		
-		$(window).resize(function(){
-			setTimeout(function(){
-				ButtonArrPos();
-			}, 250);
-		});
-
-		
-	</script>
-
 </body>
