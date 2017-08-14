@@ -4,7 +4,27 @@
 }
 
 .panel {
-	width: 650px;
+	width: calc(100% - 200px);
 	height: 400px;
-	border: solid;
+	border: 2px solid brown;
+	background-color: beige;
+	position: relative;
+	left: 200px;
+}
+
+#textWindow{
+	font-size:12;
+	font-family:fantasy;
+}
+
+#buttonTable{
+	background-color:beige;
+	position: relative;
+}
+
+button{
+	background-color:DarkGreen;
+	border: 1px solid black;
+	border-radius: 3px;
+
 }

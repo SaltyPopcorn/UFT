@@ -1,7 +1,44 @@
-<link rel="stylesheet" href="styles.css">
-<table class="panel"><tr><th>test<tr><th></table>
-<table id="buttonTable">
-<tr><th><button class="Choice">IN</button></th><th><button class="Choice">NORTH</button></th><th><button class="Choice">OUT</button></th><th><button class="Choice"></button></th><th><button class="Choice"></button></th><th><button class="Choice"></button></th></tr>
-<tr><th><button class="Choice">WEST</button></th><th><button class="Choice">SOUTH</button></th><th><button class="Choice">EAST</button></th><th><button class="Choice"></button></th><th><button class="Choice"></button></th><th><button class="Choice"></button></th></tr>
-</table>
-<script src="main.js"></script>
+<head>
+	<!--included files-->
+	<link rel="stylesheet" href="styles.css">
+	<script src="jquery-3.2.1.js"></script>
+</head>
+<body>
+
+	<table class="panel">
+	<tr>
+	<th>
+		<div id="textWindow">
+			Text Goes Here.Text Goes Here.Text Goes Here.Text Goes Here.Text Goes Here.Text Goes Here.Text Goes Here.Text Goes Here.Text Goes Here.Text Goes Here.Text Goes Here.Text Goes Here.Text Goes Here.Text Goes Here.Text Goes Here.Text Goes Here.
+		</div>
+	<th>
+	<tr>
+	</table>
+	<table id="buttonTable">
+	<tr><th><button class="Choice">LOOK</button></th><th><button class="Choice">NORTH</button></th><th><button class="Choice">USE</button></th><th><button class="Choice"></button></th><th><button class="Choice"></button></th><th><button class="Choice"></button></th></tr>
+	<tr><th><button class="Choice">WEST</button></th><th><button class="Choice">SOUTH</button></th><th><button class="Choice">EAST</button></th><th><button class="Choice"></button></th><th><button class="Choice"></button></th><th><button class="Choice"></button></th></tr>
+	</table>
+	<script src="main.js"></script>
+	
+	<!--additional page styling-->
+	<script>
+	
+		var ButtonArrPos = function(){
+			var offset = document.getElementById("buttonTable").offsetWidth;
+			document.getElementById("buttonTable").style.left = (window.innerWidth/2 - offset/2) + "px";
+		}
+		
+		$(document).ready(function(){
+			ButtonArrPos();
+		});
+		
+		$(window).resize(function(){
+			setTimeout(function(){
+				ButtonArrPos();
+			}, 250);
+		});
+
+		
+	</script>
+
+</body>
