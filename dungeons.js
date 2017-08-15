@@ -1,5 +1,6 @@
 var dungeonList = {}
 var CurrentDungeon
+var textBox = document.getElementById("textWindow")
 function newDungeon(name,dict){
 	var d = {}
 	d.name = name;
@@ -22,6 +23,15 @@ function loadDungeon(dungeon, x, y){
 function enterRoom(x,y){
 	player.x = x
 	player.y = y
+	clearText()
+	outputText(CurrentDungeon.dict[[x,y]].desc)
+	updateMap()
+}
+function clearText(){
+	textBox.innerHTML = ""
+}
+function outputText(text){
+	textBox.innerHTML = textBox.innerHTML + "<br>" + text
 }
 newDungeon("Grasslands",{
 	"0,0": newRoom("The soft grass beneath you tickles your feet.",[],[],function(){}),
