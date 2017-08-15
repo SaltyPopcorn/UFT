@@ -33,6 +33,7 @@ function clearText(){
 function outputText(text){
 	textBox.innerHTML = textBox.innerHTML + "<br>" + text
 }
+//this seems to be where you create new rooms!
 newDungeon("Grasslands",{
 	"0,0": newRoom("The soft grass beneath you tickles your feet.",[],[],function(){}),
 	"0,1": newRoom("You're getting close to a forest.",[],[],function(){})

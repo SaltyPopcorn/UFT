@@ -25,22 +25,43 @@ butN.onclick = function(){
 	if(CurrentDungeon.dict[[player.x,player.y-1]] !== undefined){
 		enterRoom(player.x,player.y-1)
 	}
+	else{
+		$("#textWindow").html("You can't go that way!");
+	}
 }
 butE.onclick = function(){
 	if(CurrentDungeon.dict[[player.x+1,player.y]] !== undefined){
 		enterRoom(player.x+1,player.y)
+	}
+	else{
+		$("#textWindow").html("You can't go that way!");
 	}
 }
 butS.onclick = function(){
 	if(CurrentDungeon.dict[[player.x,player.y+1]] !== undefined){
 		enterRoom(player.x,player.y+1)
 	}
+	else{
+		$("#textWindow").html("You can't go that way!");
+	}
 }
 butW.onclick = function(){
 	if(CurrentDungeon.dict[[player.x-1,player.y]] !== undefined){
 		enterRoom(player.x-1,player.y)
 	}
+	else{
+		$("#textWindow").html("You can't go that way!");
+	}
 }
+
+//look button functionality
+function look(){
+			console.log(player.y + "" + player.x);
+			document.getElementById("textWindow").innerHTML = CurrentDungeon.dict[[player.x, player.y]].desc;
+		}
+
+$("#buttonLook").click(look);
+
 loadDungeon(dungeonList["Grasslands"],0,0)
 updateMap();
 console.log()
